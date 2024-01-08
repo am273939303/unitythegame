@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform target; 
-    public float smoothSpeed = 5.0f; 
-    public float zOffset = -20.0f; 
+    [SerializeField] float smoothSpeed; 
+    [SerializeField] float zOffset; 
 
    
-    void LateUpdate()
+    void FixedUpdate()
     {
         if (target != null)
         {

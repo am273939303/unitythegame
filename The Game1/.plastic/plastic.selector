@@ -1,0 +1,4 @@
+repository "The Game1@datastar_lww@cloud"
+  path "/"
+    br "/main"
+    co "/main"
