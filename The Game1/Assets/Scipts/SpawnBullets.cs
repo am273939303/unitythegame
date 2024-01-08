@@ -26,4 +26,5 @@ public class SpawnBullets : MonoBehaviour
         Destroy(bullet, 5f);
 
     }
+
 }

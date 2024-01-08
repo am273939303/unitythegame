@@ -17,9 +17,19 @@ public class Health : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject == TheCauseOfDeath)
+        {
+            Debug.Log("Lose Damage --1");
+            HealthNumber--;
+            Debug.Log(HealthNumber);
+        }
+    }
+
     private void Update()
     {
-        if (HealthNumber == 0f)
+        if (HealthNumber == 0)
         {
             Destroy(gameObject);
         }
