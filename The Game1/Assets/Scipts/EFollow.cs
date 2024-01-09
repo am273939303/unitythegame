@@ -14,7 +14,8 @@ public class EFollow : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicmanager>;
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicmanager>();
+
     }
     private void Update()
     {
