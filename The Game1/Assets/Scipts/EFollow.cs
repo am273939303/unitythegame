@@ -4,28 +4,18 @@ using UnityEngine;
 
 public class EFollow : MonoBehaviour
 {
-    public float speed = 5.0f;
-    private Rigidbody2D enemyRb;
-    private GameObject player;
-    public logicmanager logic;
+    [SerializeField] private float speed;
+    [SerializeField] private GameObject player;
+   
 
+    [SerializeField] private float LookRange;
+     private float Distance;
     
     void Start()
     {
-        enemyRb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player");
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicmanager>();
-
+      
+    
     }
-    private void Update()
-    {
-        
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
 
     void FixedUpdate()
     {
@@ -34,10 +24,18 @@ public class EFollow : MonoBehaviour
 
     void MoveTowardsPlayer()
     {
-        if (player != null)
-        {
-            Vector2 lookDirection = (player.transform.position - transform.position).normalized;
-            enemyRb.velocity = new Vector2(lookDirection.x * speed, lookDirection.y * speed);
-        }
+            Distance = Vector2.Distance(transform.position, player.transform.position);
+            Vector2 lookDirection = player.transform.position - transform.position;
+            lookDirection.Normalize();
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+
+        if (Distance < LookRange)
+            {
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            } 
+
     }
+
+    
 }
