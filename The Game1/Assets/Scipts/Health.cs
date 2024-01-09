@@ -32,6 +32,7 @@ public class Health : MonoBehaviour
         if (HealthNumber == 0)
         {
             Destroy(gameObject);
+
         }
     }
 

@@ -7,12 +7,22 @@ public class EFollow : MonoBehaviour
     public float speed = 5.0f;
     private Rigidbody2D enemyRb;
     private GameObject player;
+    public logicmanager logic;
 
     
     void Start()
     {
         enemyRb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicmanager>;
+    }
+    private void Update()
+    {
+        
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 
 
