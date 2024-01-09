@@ -20,11 +20,21 @@ public class SpawnBullets : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletItem, spawnPoint.position, spawnPoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(spawnPoint.up * bulletSpeed, ForceMode2D.Impulse);
-        Destroy(bullet, 5f);
+        /* GameObject bullet = Instantiate(bulletItem, spawnPoint.position, spawnPoint.rotation);
+         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+         rb.AddForce(spawnPoint.up * bulletSpeed, ForceMode2D.Impulse);
+         Destroy(bullet, 5f); */
+        GameObject bullet = ObjectPool.Pool.GetPooledObject();
 
+        if (bullet != null)
+        {
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            bullet.transform.position = spawnPoint.position;
+            bullet.SetActive(true);
+            rb.AddForce(spawnPoint.up * bulletSpeed, ForceMode2D.Impulse);
+        }
+  
     }
+
 
 }
