@@ -5,13 +5,12 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] int HealthNumber = 5;
-    public GameObject TheCauseOfDeath;
+    public Object TheCauseOfDeath;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath)
+        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("You've been hit");
             HealthNumber--;
             Debug.Log(HealthNumber);
         }
@@ -19,9 +18,8 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath)
+        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("Lose Damage --1");
             HealthNumber--;
             Debug.Log(HealthNumber);
         }
@@ -32,7 +30,7 @@ public class Health : MonoBehaviour
         if (HealthNumber == 0)
         {
             Destroy(gameObject);
-
+            Time.deltaTime.Equals(0.2f);
         }
     }
 
