@@ -242,8 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7dbe7a209a82a44a0f7c963e2bc51c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 3
-  healthText: {fileID: 236099882}
 --- !u!114 &236099882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a701aba1e0c590489b47bd1ade6ff39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthNumber: 5
+  HealthNumber: 3
   TheCauseOfDeath: {fileID: 373823744}
 --- !u!1 &1217396934
 GameObject:

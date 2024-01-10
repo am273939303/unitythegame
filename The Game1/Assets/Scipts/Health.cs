@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Health : MonoBehaviour
 {
@@ -31,7 +33,12 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             Time.deltaTime.Equals(0.2f);
+            playGame();
         }
+    }
+    public void playGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
 }
