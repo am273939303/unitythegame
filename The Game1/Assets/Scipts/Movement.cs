@@ -44,4 +44,6 @@ public class Movement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         Trans.rotation = rotation;
     }
+    
+
 }
