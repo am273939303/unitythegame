@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Logic
   - Bullet
+  - Enemey
   layers:
   - Default
   - TransparentFX

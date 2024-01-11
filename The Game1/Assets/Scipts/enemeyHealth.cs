@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-
-public class Health : MonoBehaviour
+public class enemeyHealth : MonoBehaviour
 {
     [SerializeField] int HealthNumber = 5;
     public Object TheCauseOfDeath;
@@ -36,10 +34,4 @@ public class Health : MonoBehaviour
             endGame();
         }
     }
-    public void endGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-    }
-
 }
-
