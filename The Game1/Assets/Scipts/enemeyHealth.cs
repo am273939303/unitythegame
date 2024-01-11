@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class enemeyHealth : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class enemeyHealth : MonoBehaviour
             HealthNumber--;
             Debug.Log(HealthNumber);
         }
+    }
+    public void endGame()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     private void Update()
