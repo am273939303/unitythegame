@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
+        if (collision.gameObject == TheCauseOfDeath )
         {
             HealthNumber--;
             Debug.Log(HealthNumber);
@@ -20,11 +20,10 @@ public class Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
-        {
+      
             HealthNumber--;
             Debug.Log(HealthNumber);
-        }
+        
     }
 
     private void Update()
@@ -33,7 +32,6 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             Time.deltaTime.Equals(0.2f);
-            endGame();
         }
     }
     public void endGame()
