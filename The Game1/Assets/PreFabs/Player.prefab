@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthNumber: 3
-  TheCauseOfDeath: {fileID: 0}
+  TheCauseOfDeath: {fileID: 1087260392894911878, guid: d44fa2944bce0924daced9afdded722e, type: 3}
 --- !u!1 &6155556637193695920
 GameObject:
   m_ObjectHideFlags: 0

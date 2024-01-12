@@ -7,7 +7,7 @@ public class CoinCollect : MonoBehaviour
 {
     public static int score = 0;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
@@ -16,4 +16,4 @@ public class CoinCollect : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-}
+    }
