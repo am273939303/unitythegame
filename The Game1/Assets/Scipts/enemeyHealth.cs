@@ -28,7 +28,7 @@ public class enemeyHealth : MonoBehaviour
     public void endGameWin()
     {
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(4);
     }
 
     private void Update()

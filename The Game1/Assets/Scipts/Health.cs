@@ -6,32 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int HealthNumber = 5;
+    [SerializeField] int HealthNumber1 = 5;
     public Object TheCauseOfDeath;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject == TheCauseOfDeath )
         {
-            HealthNumber--;
-            Debug.Log(HealthNumber);
+            HealthNumber1--;
+            Debug.Log(HealthNumber1);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
       
-            HealthNumber--;
-            Debug.Log(HealthNumber);
+            HealthNumber1--;
+            Debug.Log(HealthNumber1);
         
     }
 
     private void Update()
     {
-        if (HealthNumber == 0)
+        if (HealthNumber1 == 0)
         {
             Destroy(gameObject);
             Time.deltaTime.Equals(0.2f);
+            endGame();
         }
     }
     public void endGame()
