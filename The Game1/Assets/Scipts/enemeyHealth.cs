@@ -25,7 +25,7 @@ public class enemeyHealth : MonoBehaviour
             Debug.Log(HealthNumber);
         }
     }
-    public void endGame()
+    public void endGameWin()
     {
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
@@ -37,7 +37,7 @@ public class enemeyHealth : MonoBehaviour
         {
             Destroy(gameObject);
             Time.deltaTime.Equals(0.2f);
-            endGame();
+            endGameWin();
         }
     }
 }
