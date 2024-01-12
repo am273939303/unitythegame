@@ -6,29 +6,25 @@ using UnityEngine.SceneManagement;
 public class enemeyHealth : MonoBehaviour
 {
     [SerializeField] int HealthNumber = 5;
-    public Object TheCauseOfDeath;
-
+ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
-        {
-            HealthNumber--;
-            Debug.Log(HealthNumber);
-        }
+        ProccessColliders(collision.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath || collision.gameObject.tag == "Bullet")
+        ProccessColliders(collision.gameObject);
+    }
+
+    private void ProccessColliders(GameObject collisions)
+    {
+        if (collisions.gameObject.CompareTag("Bullet"))
         {
             HealthNumber--;
-            Debug.Log(HealthNumber);
-        }
-    }
-    public void endGameWin()
-    {
+            Debug.Log(gameObject + "Has Lost Damage:" + HealthNumber);
 
-        SceneManager.LoadScene(4);
+        }
     }
 
     private void Update()
@@ -37,7 +33,7 @@ public class enemeyHealth : MonoBehaviour
         {
             Destroy(gameObject);
             Time.deltaTime.Equals(0.2f);
-            endGameWin();
+  
         }
     }
 }

@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] int HealthNumber1 = 5;
 
-    [SerializeField] GameObject TheCauseOfDeath;
+   
   
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
 
     private void ProccesCollisions(GameObject collisions)
     {
-        if(collisions == TheCauseOfDeath)
+        if(collisions.gameObject.CompareTag("Enemy"))
         {
             HealthNumber1--;
             Debug.Log(gameObject + "Has Lost Damage:" + HealthNumber1);
