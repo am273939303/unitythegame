@@ -1,5 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,23 +11,29 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     [SerializeField] int HealthNumber1 = 5;
-    public Object TheCauseOfDeath;
+
+    [SerializeField] GameObject TheCauseOfDeath;
+  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == TheCauseOfDeath )
-        {
-            HealthNumber1--;
-            Debug.Log(HealthNumber1);
-        }
+        ProccesCollisions(collision.gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-      
+
+        ProccesCollisions(collision.gameObject);
+    }
+
+    private void ProccesCollisions(GameObject collisions)
+    {
+        if(collisions == TheCauseOfDeath)
+        {
             HealthNumber1--;
-            Debug.Log(HealthNumber1);
-        
+            Debug.Log(gameObject + "Has Lost Damage:" + HealthNumber1);
+
+        }
     }
 
     private void Update()
