@@ -6,13 +6,8 @@ using UnityEngine.SceneManagement;
 public class enemeyHealth : MonoBehaviour
 {
     [SerializeField] int HealthNumber = 5;
- 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        ProccessColliders(collision.gameObject);
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         ProccessColliders(collision.gameObject);
     }
@@ -23,7 +18,6 @@ public class enemeyHealth : MonoBehaviour
         {
             HealthNumber--;
             Debug.Log(gameObject + "Has Lost Damage:" + HealthNumber);
-
         }
     }
 
@@ -31,7 +25,7 @@ public class enemeyHealth : MonoBehaviour
     {
         if (HealthNumber == 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Time.deltaTime.Equals(0.2f);
   
         }
