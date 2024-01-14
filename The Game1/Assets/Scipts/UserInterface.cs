@@ -25,18 +25,17 @@ public class UserInterface : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
-    private int[] levelOrder = { 4, 1, 4, 2, 4, 3 }; // Define the order of levels
-    private int currentLevelIndex = 1; // Index of the current level
+    private int[] levelOrder = { 4, 1, 4, 2, 4, 3 }; 
+    private int currentLevelIndex = 1; 
 
     public void LevelAdvance()
     {
-        // Load the next level in the predefined order
+       
         int nextSceneIndex = levelOrder[currentLevelIndex];
 
-        // Load the next scene
         SceneManager.LoadScene(nextSceneIndex);
 
-        // Update the current level index for the next button click
+        
         currentLevelIndex = (currentLevelIndex + 1) % levelOrder.Length;
     }
         public void home()
