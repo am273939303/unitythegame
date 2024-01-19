@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6155556637056466927}
   - component: {fileID: 6155556637056466926}
   - component: {fileID: 6155556637056466913}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -247,8 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a701aba1e0c590489b47bd1ade6ff39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthNumber: 3
-  TheCauseOfDeath: {fileID: 1087260392894911878, guid: d44fa2944bce0924daced9afdded722e, type: 3}
+  HealthNumber1: 5
 --- !u!1 &6155556637193695920
 GameObject:
   m_ObjectHideFlags: 0
